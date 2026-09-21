@@ -33,7 +33,8 @@ for (const token of landmarks) {
 const hrefs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map((m) => m[1]);
 for (const href of hrefs) {
   if (/^(https?:|mailto:|#)/i.test(href)) continue;
-  const target = path.join(root, href);
+  const clean = href.split("?")[0].split("#")[0];
+  const target = path.join(root, clean);
   if (!fs.existsSync(target)) fail("Broken local asset: " + href);
 }
 

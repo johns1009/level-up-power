@@ -104,3 +104,26 @@
     sections.forEach(function (section) { sectionObserver.observe(section); });
   }
 })();
+
+
+  // One-line diagram: animate current along conductors
+  (function animateOneLine() {
+    if (reduceMotion) return;
+    var pulses = document.querySelectorAll(".sld-pulse");
+    if (!pulses.length) return;
+    var start = null;
+    function frame(ts) {
+      if (start == null) start = ts;
+      var t = ts - start;
+      pulses.forEach(function (el, i) {
+        var dur = i === 0 ? 2400 : 2800;
+        var delay = i === 0 ? 0 : 350;
+        var local = ((t - delay) % dur + dur) % dur;
+        var offset = -(local / dur) * 100;
+        el.style.strokeDasharray = "12 88";
+        el.style.strokeDashoffset = String(offset);
+      });
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
