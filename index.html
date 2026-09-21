@@ -32,6 +32,7 @@
         </button>
         <ul id="nav-menu" class="nav-menu">
           <li><a href="#journey">Journey</a></li>
+          <li><a href="#power-flow">Flow</a></li>
           <li><a href="#approach">Approach</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#industries">Industries</a></li>
@@ -185,6 +186,94 @@
             <li><strong>Chip</strong><span>Rack power</span></li>
           </ol>
         </div>
+
+        <figure class="power-flow" id="power-flow">
+          <figcaption class="power-flow-caption">
+            <p class="eyebrow">Power flow</p>
+            <h3 class="power-flow-title">Electrons into the halls</h3>
+            <p>Utility path through the substation and on-site BTM generation both feed the data halls — one coordinated stack.</p>
+          </figcaption>
+          <div class="power-flow-frame" role="img" aria-label="Animated diagram: electrons flow from a substation and a behind-the-meter plant into data halls">
+            <svg class="power-flow-svg" viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="flowGradA" x1="0" y1="0" x2="1" y2="0">
+                  <stop stop-color="#4ade80"/>
+                  <stop offset="1" stop-color="#38bdf8"/>
+                </linearGradient>
+                <linearGradient id="flowGradB" x1="0" y1="0" x2="1" y2="0">
+                  <stop stop-color="#2dd4bf"/>
+                  <stop offset="1" stop-color="#7dd3fc"/>
+                </linearGradient>
+                <filter id="flowGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <marker id="flowArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 1.2 L8.5 5 L0 8.8 Z" fill="#7dd3fc"/>
+                </marker>
+              </defs>
+
+              <!-- soft stage -->
+              <rect x="16" y="16" width="928" height="328" rx="22" fill="#161616" stroke="rgba(125,211,252,0.12)"/>
+
+              <!-- Substation -->
+              <g class="pf-node pf-substation">
+                <rect x="48" y="48" width="168" height="118" rx="16" fill="#1c1c1c" stroke="#4ade80" stroke-width="1.6"/>
+                <text x="132" y="78" text-anchor="middle" fill="#e5e7eb" font-family="Syne, sans-serif" font-size="16" font-weight="700">Substation</text>
+                <text x="132" y="98" text-anchor="middle" fill="#9ca3af" font-family="DM Sans, sans-serif" font-size="11">HV · transformers · relays</text>
+                <!-- simple yard icon -->
+                <rect x="78" y="112" width="36" height="28" rx="3" fill="none" stroke="#4ade80" stroke-width="1.4"/>
+                <rect x="122" y="108" width="28" height="32" rx="3" fill="none" stroke="#4ade80" stroke-width="1.4"/>
+                <path d="M86 126h20M130 120h12M130 132h12" stroke="#2dd4bf" stroke-width="1.2"/>
+              </g>
+
+              <!-- BTM plant -->
+              <g class="pf-node pf-btm">
+                <rect x="48" y="214" width="168" height="118" rx="16" fill="#1c1c1c" stroke="#2dd4bf" stroke-width="1.6"/>
+                <text x="132" y="244" text-anchor="middle" fill="#e5e7eb" font-family="Syne, sans-serif" font-size="16" font-weight="700">BTM plant</text>
+                <text x="132" y="264" text-anchor="middle" fill="#9ca3af" font-family="DM Sans, sans-serif" font-size="11">On-site generation</text>
+                <circle cx="108" cy="296" r="14" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+                <path d="M108 282v8M108 302v8M94 296h8M114 296h8" stroke="#38bdf8" stroke-width="1.4" stroke-linecap="round"/>
+                <rect x="140" y="284" width="40" height="24" rx="3" fill="none" stroke="#38bdf8" stroke-width="1.4"/>
+              </g>
+
+              <!-- Data halls -->
+              <g class="pf-node pf-halls">
+                <rect x="680" y="110" width="236" height="140" rx="18" fill="#1c1c1c" stroke="#38bdf8" stroke-width="1.8"/>
+                <text x="798" y="148" text-anchor="middle" fill="#e5e7eb" font-family="Syne, sans-serif" font-size="18" font-weight="700">Data halls</text>
+                <text x="798" y="170" text-anchor="middle" fill="#9ca3af" font-family="DM Sans, sans-serif" font-size="12">Critical power · white space</text>
+                <rect x="710" y="188" width="52" height="36" rx="4" fill="none" stroke="#7dd3fc" stroke-width="1.3" opacity=".9"/>
+                <rect x="772" y="188" width="52" height="36" rx="4" fill="none" stroke="#7dd3fc" stroke-width="1.3" opacity=".9"/>
+                <rect x="834" y="188" width="52" height="36" rx="4" fill="none" stroke="#7dd3fc" stroke-width="1.3" opacity=".9"/>
+                <path d="M720 198h32M720 210h32M782 198h32M782 210h32M844 198h32M844 210h32" stroke="#4ade80" stroke-width="1.1" opacity=".75"/>
+              </g>
+
+              <!-- Paths -->
+              <path id="pathSub" class="pf-wire" d="M216 107 C 360 107, 480 150, 680 168" fill="none" stroke="url(#flowGradA)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#flowArrow)" opacity=".9"/>
+              <path id="pathBtm" class="pf-wire" d="M216 273 C 360 273, 480 220, 680 192" fill="none" stroke="url(#flowGradB)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#flowArrow)" opacity=".9"/>
+
+              <!-- dashed energy trails -->
+              <path class="pf-dash" d="M216 107 C 360 107, 480 150, 680 168" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="6 10" opacity=".55"/>
+              <path class="pf-dash pf-dash--b" d="M216 273 C 360 273, 480 220, 680 192" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="6 10" opacity=".55"/>
+
+              <!-- electrons on substation path -->
+              <g class="pf-electrons" filter="url(#flowGlow)">
+                <circle r="5" fill="#4ade80"><animateMotion dur="3.2s" repeatCount="indefinite" path="M216 107 C 360 107, 480 150, 680 168"/></circle>
+                <circle r="3.5" fill="#86efac"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite" path="M216 107 C 360 107, 480 150, 680 168"/></circle>
+                <circle r="4" fill="#2dd4bf"><animateMotion dur="3.2s" begin="2.1s" repeatCount="indefinite" path="M216 107 C 360 107, 480 150, 680 168"/></circle>
+              </g>
+              <!-- electrons on BTM path -->
+              <g class="pf-electrons" filter="url(#flowGlow)">
+                <circle r="5" fill="#2dd4bf"><animateMotion dur="3.6s" repeatCount="indefinite" path="M216 273 C 360 273, 480 220, 680 192"/></circle>
+                <circle r="3.5" fill="#38bdf8"><animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite" path="M216 273 C 360 273, 480 220, 680 192"/></circle>
+                <circle r="4" fill="#7dd3fc"><animateMotion dur="3.6s" begin="2.4s" repeatCount="indefinite" path="M216 273 C 360 273, 480 220, 680 192"/></circle>
+              </g>
+
+              <text x="480" y="338" text-anchor="middle" fill="#9ca3af" font-family="DM Sans, sans-serif" font-size="12">Grid / substation feed  ·  BTM generation feed  →  data halls</text>
+            </svg>
+          </div>
+        </figure>
+
       </div>
     </section>
 
