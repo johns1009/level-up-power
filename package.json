@@ -1,0 +1,11 @@
+{
+  "name": "level-up-power-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Single-page marketing site for Level Up Power",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "test": "node validate.js",
+    "validate": "node validate.js"
+  }
+}
