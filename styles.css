@@ -135,10 +135,8 @@ a:hover {
   object-fit: contain;
   object-position: center;
   flex-shrink: 0;
-  background: #0e0e0e;
-  box-shadow:
-    0 0 0 1px rgba(34, 211, 238, 0.28),
-    0 0 18px rgba(34, 211, 238, 0.12);
+  background: transparent;
+  box-shadow: none;
 }
 
 .logo-img--footer {
@@ -1225,15 +1223,24 @@ body.menu-open {
 }
 
 
-.logo-img--wordmark {
+
+
+.logo-img.logo-img--wordmark,
+.logo-img.logo-img--mark {
   width: auto;
-  height: 40px;
-  max-width: min(260px, 58vw);
-  object-fit: contain;
+  height: 44px;
+  max-width: min(220px, 55vw);
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 1px 10px rgba(45, 212, 191, 0.22));
 }
-.logo-img--wordmark.logo-img--footer {
+.logo-img.logo-img--mark {
+  width: 36px;
   height: 36px;
+  max-width: none;
 }
-.logo:has(.logo-img--wordmark) .logo-text {
-  display: none;
+.footer-logo .logo-img.logo-img--mark {
+  width: 34px;
+  height: 34px;
 }
