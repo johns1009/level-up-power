@@ -1,6 +1,6 @@
 # Level Up Power
 
-Single-page marketing site for Level Up Power — Grid to Chip electrical infrastructure consulting and multi-manufacturer sourcing for data centers, power generation, and behind-the-meter (BTM) providers.
+Single-page marketing site for Level Up Power — Grid to Chip electrical infrastructure consulting and multi-manufacturer sourcing for data centers, power generation (including renewables), and behind-the-meter (BTM) providers.
 
 ## View locally
 
