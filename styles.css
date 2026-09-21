@@ -1311,3 +1311,9 @@ body.menu-open {
   width: 34px;
   height: 34px;
 }
+
+
+.logo-img.logo-img--wordmark.logo-img--footer {
+  height: 40px;
+  max-width: min(200px, 70vw);
+}
