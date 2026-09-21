@@ -1236,14 +1236,16 @@ body.menu-open {
   height: auto;
 }
 .sld-pulse {
-  animation: sld-current 3.2s linear infinite;
+  /* CSS fallback if SMIL is unavailable */
+  animation: sld-current 2.4s linear infinite;
 }
 .sld-pulse--b {
-  animation-duration: 3.6s;
-  animation-delay: 0.4s;
+  animation-duration: 2.8s;
+  animation-delay: 0.35s;
 }
 @keyframes sld-current {
-  to { stroke-dashoffset: -800; }
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
 }
 
 @media (max-width: 760px) {

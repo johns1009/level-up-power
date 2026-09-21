@@ -16,7 +16,7 @@
   <meta property="og:image" content="logo-wordmark.png" />
   <link rel="icon" href="brand-mark.svg" type="image/svg+xml" />
   <link rel="icon" href="logo-mark.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=sld2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -310,9 +310,13 @@
                 <text x="438" y="2">Bus</text>
               </g>
 
-              <!-- Animated current along key one-line paths (single segment traveling on the conductors) -->
-              <path class="sld-pulse sld-pulse--a" d="M86 118 H150 H186 H250 H294 H360 H392 H480 V210 H620 H690 H722 H780" fill="none" stroke="#4ade80" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="40 760" filter="url(#sldGlow)" opacity=".9"/>
-              <path class="sld-pulse sld-pulse--b" d="M88 300 H160 H192 H480 V210" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="40 520" filter="url(#sldGlow)" opacity=".9"/>
+              <!-- Animated current along the one-line conductors (SMIL + CSS for reliability) -->
+              <path class="sld-pulse sld-pulse--a" pathLength="100" d="M86 118 H480 V210 H780" fill="none" stroke="#4ade80" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="12 88" stroke-dashoffset="0" filter="url(#sldGlow)" opacity="1">
+                <animate attributeName="stroke-dashoffset" values="0;-100" dur="2.4s" repeatCount="indefinite"/>
+              </path>
+              <path class="sld-pulse sld-pulse--b" pathLength="100" d="M88 300 H480 V210" fill="none" stroke="#38bdf8" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="12 88" stroke-dashoffset="0" filter="url(#sldGlow)" opacity="1">
+                <animate attributeName="stroke-dashoffset" values="0;-100" dur="2.8s" begin="0.35s" repeatCount="indefinite"/>
+              </path>
             </svg>
           </div>
         </figure>
