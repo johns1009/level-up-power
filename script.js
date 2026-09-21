@@ -106,21 +106,23 @@
 })();
 
 
-  // One-line diagram: animate current along conductors
+  // One-line diagram: animate current along conductors into PDUs
   (function animateOneLine() {
     if (reduceMotion) return;
     var pulses = document.querySelectorAll(".sld-pulse");
     if (!pulses.length) return;
     var start = null;
+    var durs = [2600, 3000, 2200];
+    var delays = [0, 300, 600];
     function frame(ts) {
       if (start == null) start = ts;
       var t = ts - start;
       pulses.forEach(function (el, i) {
-        var dur = i === 0 ? 2400 : 2800;
-        var delay = i === 0 ? 0 : 350;
+        var dur = durs[i] || 2400;
+        var delay = delays[i] || 0;
         var local = ((t - delay) % dur + dur) % dur;
         var offset = -(local / dur) * 100;
-        el.style.strokeDasharray = "12 88";
+        el.style.strokeDasharray = "10 90";
         el.style.strokeDashoffset = String(offset);
       });
       requestAnimationFrame(frame);

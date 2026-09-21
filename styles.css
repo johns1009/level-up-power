@@ -1240,8 +1240,12 @@ body.menu-open {
   animation: sld-current 2.4s linear infinite;
 }
 .sld-pulse--b {
-  animation-duration: 2.8s;
-  animation-delay: 0.35s;
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+}
+.sld-pulse--c {
+  animation-duration: 2.2s;
+  animation-delay: 0.6s;
 }
 @keyframes sld-current {
   from { stroke-dashoffset: 0; }
@@ -1285,7 +1289,8 @@ body.menu-open {
 
   .sld-pulse,
   .sld-pulse--a,
-  .sld-pulse--b {
+  .sld-pulse--b,
+  .sld-pulse--c {
     animation: none;
     opacity: 0.55;
   }
