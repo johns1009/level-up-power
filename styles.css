@@ -1,28 +1,33 @@
 /* Level Up Power — Grid to Chip marketing site */
 
 :root {
-  --navy-950: #060b16;
-  --navy-900: #0a1224;
-  --navy-850: #0f1a30;
-  --navy-800: #152238;
-  --charcoal: #1a2336;
-  --slate-400: #94a3b8;
-  --slate-300: #cbd5e1;
-  --slate-200: #e2e8f0;
+  /* Brand A/B variant: mint → teal → sky from Level Up Power wordmark */
+  --navy-950: #121212;
+  --navy-900: #1a1a1a;
+  --navy-850: #222222;
+  --navy-800: #2a2a2a;
+  --charcoal: #1f1f1f;
+  --slate-400: #9ca3af;
+  --slate-300: #d1d5db;
+  --slate-200: #e5e7eb;
   --white: #f8fafc;
   --pure: #ffffff;
-  --blue-500: #3b82f6;
-  --blue-400: #60a5fa;
-  --cyan-400: #22d3ee;
-  --cyan-300: #67e8f9;
-  --cyan-200: #a5f3fc;
+  --mint-400: #4ade80;
+  --mint-300: #86efac;
+  --teal-400: #2dd4bf;
+  --blue-500: #4ade80;
+  --blue-400: #34d399;
+  --cyan-400: #38bdf8;
+  --cyan-300: #7dd3fc;
+  --cyan-200: #bae6fd;
   --accent: var(--cyan-400);
+  --brand-grad: linear-gradient(105deg, #4ade80 0%, #2dd4bf 48%, #38bdf8 100%);
   --font-display: "Syne", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --radius: 14px;
   --radius-sm: 10px;
-  --shadow: 0 20px 50px rgba(2, 8, 24, 0.45);
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   --header-h: 72px;
   --max: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -99,7 +104,7 @@ a:hover {
   overflow: visible;
   /* Solid header background — avoid backdrop-filter here so fixed mobile nav
      is not trapped in a filter containing block. */
-  background: #060b16;
+  background: var(--navy-950);
   border-bottom: 1px solid rgba(148, 163, 184, 0.12);
   box-shadow: 0 10px 30px rgba(2, 8, 24, 0.25);
 }
@@ -130,7 +135,7 @@ a:hover {
   object-fit: contain;
   object-position: center;
   flex-shrink: 0;
-  background: #0a0a0a;
+  background: #0e0e0e;
   box-shadow:
     0 0 0 1px rgba(34, 211, 238, 0.28),
     0 0 18px rgba(34, 211, 238, 0.12);
@@ -221,7 +226,7 @@ a:hover {
 }
 
 .nav-cta {
-  background: linear-gradient(135deg, var(--blue-500), var(--cyan-400));
+  background: var(--brand-grad);
   color: var(--navy-950) !important;
   font-weight: 700 !important;
   margin-left: 0.35rem;
@@ -229,7 +234,7 @@ a:hover {
 
 .nav-cta:hover {
   filter: brightness(1.08);
-  background: linear-gradient(135deg, var(--blue-500), var(--cyan-400)) !important;
+  background: var(--brand-grad) !important;
 }
 
 /* Hero */
@@ -249,8 +254,8 @@ a:hover {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(74, 222, 128, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 222, 128, 0.07) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%);
 }
@@ -306,7 +311,7 @@ h1 {
 }
 
 .text-gradient {
-  background: linear-gradient(120deg, var(--blue-400), var(--cyan-400) 55%, var(--cyan-200));
+  background: linear-gradient(120deg, var(--mint-400), var(--teal-400) 45%, var(--cyan-400) 78%, var(--cyan-200));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -347,7 +352,7 @@ h1 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--blue-500), var(--cyan-400));
+  background: var(--brand-grad);
   color: var(--navy-950);
 }
 
@@ -694,7 +699,7 @@ body.menu-open {
   padding: 1.35rem 1.5rem;
   border-radius: var(--radius);
   border: 1px dashed rgba(59, 130, 246, 0.45);
-  background: linear-gradient(90deg, rgba(59, 130, 246, 0.06), rgba(34, 211, 238, 0.08));
+  background: linear-gradient(90deg, rgba(74, 222, 128, 0.07), rgba(34, 211, 238, 0.08));
 }
 
 .partnership-note p {
@@ -742,19 +747,19 @@ body.menu-open {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--blue-500), var(--cyan-400));
+  background: linear-gradient(180deg, var(--mint-400), var(--cyan-400));
 }
 
 .layer-card[data-layer="2"]::before {
-  background: linear-gradient(180deg, #3b82f6, #22d3ee);
+  background: linear-gradient(180deg, #4ade80, #2dd4bf);
 }
 
 .layer-card[data-layer="3"]::before {
-  background: linear-gradient(180deg, #22d3ee, #67e8f9);
+  background: linear-gradient(180deg, #2dd4bf, #38bdf8);
 }
 
 .layer-card[data-layer="4"]::before {
-  background: linear-gradient(180deg, #22d3ee, #a5f3fc);
+  background: linear-gradient(180deg, #38bdf8, #bae6fd);
 }
 
 .layer-step {
@@ -891,7 +896,7 @@ body.menu-open {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue-500), var(--cyan-400));
+  background: var(--brand-grad);
 }
 
 .contact-web {
@@ -1129,7 +1134,7 @@ body.menu-open {
     align-items: stretch;
     gap: 0.35rem;
     padding: 1.1rem 1.25rem 2rem;
-    background: #060b16;
+    background: var(--navy-950);
     border-bottom: 1px solid rgba(148, 163, 184, 0.15);
     visibility: hidden;
     pointer-events: none;
@@ -1217,4 +1222,18 @@ body.menu-open {
   .layer-card:hover {
     transform: none;
   }
+}
+
+
+.logo-img--wordmark {
+  width: auto;
+  height: 40px;
+  max-width: min(260px, 58vw);
+  object-fit: contain;
+}
+.logo-img--wordmark.logo-img--footer {
+  height: 36px;
+}
+.logo:has(.logo-img--wordmark) .logo-text {
+  display: none;
 }
