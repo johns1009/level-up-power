@@ -249,25 +249,12 @@
               </g>
 
               <!-- Paths -->
-              <path id="pathSub" class="pf-wire" d="M216 107 C 360 107, 480 150, 680 168" fill="none" stroke="url(#flowGradA)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#flowArrow)" opacity=".9"/>
-              <path id="pathBtm" class="pf-wire" d="M216 273 C 360 273, 480 220, 680 192" fill="none" stroke="url(#flowGradB)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#flowArrow)" opacity=".9"/>
+              <path id="pathSub" class="pf-wire" d="M216 107 C 360 107, 480 150, 680 168" fill="none" stroke="url(#flowGradA)" stroke-width="1.6" stroke-linecap="round" opacity=".4" marker-end="url(#flowArrow)"/>
+              <path id="pathBtm" class="pf-wire" d="M216 273 C 360 273, 480 220, 680 192" fill="none" stroke="url(#flowGradB)" stroke-width="1.6" stroke-linecap="round" opacity=".4" marker-end="url(#flowArrow)"/>
 
-              <!-- dashed energy trails -->
-              <path class="pf-dash" d="M216 107 C 360 107, 480 150, 680 168" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="6 10" opacity=".55"/>
-              <path class="pf-dash pf-dash--b" d="M216 273 C 360 273, 480 220, 680 192" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="6 10" opacity=".55"/>
-
-              <!-- electrons on substation path -->
-              <g class="pf-electrons" filter="url(#flowGlow)">
-                <circle r="5" fill="#4ade80"><animateMotion dur="3.2s" repeatCount="indefinite" path="M216 107 C 360 107, 480 150, 680 168"/></circle>
-                <circle r="3.5" fill="#86efac"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite" path="M216 107 C 360 107, 480 150, 680 168"/></circle>
-                <circle r="4" fill="#2dd4bf"><animateMotion dur="3.2s" begin="2.1s" repeatCount="indefinite" path="M216 107 C 360 107, 480 150, 680 168"/></circle>
-              </g>
-              <!-- electrons on BTM path -->
-              <g class="pf-electrons" filter="url(#flowGlow)">
-                <circle r="5" fill="#2dd4bf"><animateMotion dur="3.6s" repeatCount="indefinite" path="M216 273 C 360 273, 480 220, 680 192"/></circle>
-                <circle r="3.5" fill="#38bdf8"><animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite" path="M216 273 C 360 273, 480 220, 680 192"/></circle>
-                <circle r="4" fill="#7dd3fc"><animateMotion dur="3.6s" begin="2.4s" repeatCount="indefinite" path="M216 273 C 360 273, 480 220, 680 192"/></circle>
-              </g>
+              <!-- single traveling line pulse on each feed -->
+              <path class="pf-pulse pf-pulse--a" d="M216 107 C 360 107, 480 150, 680 168" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-dasharray="56 420" filter="url(#flowGlow)" opacity=".95"/>
+              <path class="pf-pulse pf-pulse--b" d="M216 273 C 360 273, 480 220, 680 192" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-dasharray="56 420" filter="url(#flowGlow)" opacity=".95"/>
 
               <text x="480" y="338" text-anchor="middle" fill="#9ca3af" font-family="DM Sans, sans-serif" font-size="12">Grid / substation feed  ·  BTM generation feed  →  data halls</text>
             </svg>

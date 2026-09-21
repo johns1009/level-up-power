@@ -1235,15 +1235,15 @@ body.menu-open {
   width: 100%;
   height: auto;
 }
-.pf-dash {
-  animation: pf-dash-move 1.4s linear infinite;
+.pf-pulse {
+  animation: pf-line-flow 2.4s linear infinite;
 }
-.pf-dash--b {
-  animation-duration: 1.7s;
-  animation-direction: reverse;
+.pf-pulse--b {
+  animation-duration: 2.8s;
+  animation-delay: 0.35s;
 }
-@keyframes pf-dash-move {
-  to { stroke-dashoffset: -32; }
+@keyframes pf-line-flow {
+  to { stroke-dashoffset: -476; }
 }
 
 @media (max-width: 760px) {
@@ -1281,13 +1281,12 @@ body.menu-open {
     transform: none;
   }
 
-  .pf-dash,
-  .pf-dash--b {
+  .pf-pulse,
+  .pf-pulse--a,
+  .pf-pulse--b {
     animation: none;
-  }
-
-  .pf-electrons {
-    display: none;
+    stroke-dasharray: none;
+    opacity: 0.75;
   }
 }
 
