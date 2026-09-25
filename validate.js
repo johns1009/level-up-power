@@ -11,7 +11,7 @@ const notes = [];
 function fail(msg) { errors.push(msg); }
 function note(msg) { notes.push(msg); }
 
-const required = ["index.html", "styles.css", "script.js", "brand-mark.svg", "logo.png"];
+const required = ["index.html", "styles.css", "script.js", "brand-mark.svg", "logo.png", "documents/LUP-Standard-Terms-and-Conditions-of-Sale-RevA.pdf"];
 for (const file of required) {
   if (!fs.existsSync(path.join(root, file))) fail("Missing required file: " + file);
 }
@@ -20,7 +20,7 @@ const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const js = fs.readFileSync(path.join(root, "script.js"), "utf8");
 
-const requiredIds = ["main", "top", "journey", "approach", "products", "industries", "contact", "contact-form", "nav-menu", "year"];
+const requiredIds = ["main", "top", "journey", "approach", "products", "industries", "resources", "contact", "contact-form", "nav-menu", "year"];
 for (const id of requiredIds) {
   if (!html.includes('id="' + id + '"')) fail("Missing expected id: " + id);
 }
