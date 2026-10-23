@@ -60,8 +60,8 @@
 
       event.preventDefault();
       var status = document.getElementById("form-status");
-      if (status) status.textContent = "Opening your email app with a draft to info@leveluppower.biz.";
-      window.location.href = "mailto:info@leveluppower.biz?subject=" +
+      if (status) status.textContent = "Opening your email app with a draft to riley@leveluppower.biz.";
+      window.location.href = "mailto:riley@leveluppower.biz?subject=" +
         encodeURIComponent("Level Up Power inquiry") + "&body=" + encodeURIComponent(body);
     });
   }
